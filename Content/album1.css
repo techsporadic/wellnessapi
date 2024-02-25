@@ -1,0 +1,132 @@
+.navbar {
+  margin-bottom: 0;
+  background: transparent;
+}
+
+.navbar2 {
+  margin-bottom: 0;
+  background: #f9f0c0;
+}
+
+.dBg {  background: url('../img/bg1.png'); background-size: cover;}
+
+#snav {
+  background: #ffdfd1;
+}
+
+
+.jumbotron {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-bottom: 0;
+  background: transparent;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.mphone {position: absolute; color:white; font-weight: bolder; top:17px; margin-left: 18px; font-size: 27px;}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+#fcall {color: white;}
+
+.album { /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: transparent;
+}
+
+
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.cartcounter {background: #f7eda3; color:#000; padding: 1px 6px 1px 6px; border-radius: 10px; position: absolute; top:14px; margin-left:30px; }
+
+time.icon
+{
+  font-size: 1em; /* change icon size */
+  display: block;
+  position: relative;
+  width: 7em;
+  height: 8em;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+time.icon *
+{
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+time.icon strong
+{
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: #ffdfd1;
+  box-shadow: 0 2px 0 #ffdfd1;
+}
+
+time.icon em
+{
+  position: absolute;
+  bottom: 0.3em;
+  color: #ffdfd1;
+}
+
+time.icon span
+{
+  font-size: 2.8em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: #2f2f2f;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.htitle {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.nomargin {
+    margin-bottom: 0px;
+}
+
+#incfont {
+    font-size: 18px;
+}
+
+.orange-text {
+    color: #ff9800 !important;
+}
+
+.itemId {background: #f4b642; border:1px #fff solid; padding: 4px; border-radius: 14px; color:#e0dbd9; font-size: 22px; font-weight: bolder; position: absolute; width:64px; top:30%; left: 37%;}
+
+.card {border-bottom:3px #6F95BF solid;}

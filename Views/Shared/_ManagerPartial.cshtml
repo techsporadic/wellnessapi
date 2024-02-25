@@ -1,0 +1,22 @@
+﻿<nav style="border-bottom: 1px rgba(0, 0, 0, 0.06) solid;" class="navbar navbar-expand navbar-light bgTp">
+    <div class="container-fluid">
+        <div class="navbar-collapse" id="navbarsExample04" style="">
+            <span id="toggleMenuBtn"><i class="fas fa-bars"></i></span>
+            <ul class="navbar-nav mr-auto">
+                <a class="nBrand">@ViewBag.TitleText</a>
+                <small id="roleTypeTitle">MANAGER <i class="far fa-question-circle"></i></small>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="/img/avatar.png" class="img-fluid" />
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Account/SignOff">Log Out</a>
+                        <a class="dropdown-item" href="/Manager/Account">Account</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

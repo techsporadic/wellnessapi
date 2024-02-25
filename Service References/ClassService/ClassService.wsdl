@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/ClassService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClassService" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/ClassService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IClassService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/ClassService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Requests" />
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Responses" />
+      <xs:element name="GetClasses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://JonasFitness.com/CompeteDataService/v2_0/Requests" minOccurs="0" name="GetClassesRequest" nillable="true" type="q1:GetClassesRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetClassesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://JonasFitness.com/CompeteDataService/v2_0/Responses" minOccurs="0" name="GetClassesResult" nillable="true" type="q2:GetClassesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClasses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Requests" minOccurs="0" name="InsertClassesRequest" nillable="true" type="q3:InsertClassesRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertClassesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Responses" minOccurs="0" name="InsertClassesResult" nillable="true" type="q4:InsertClassesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateClasses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://JonasFitness.com/CompeteDataService/v2_0/Requests" minOccurs="0" name="UpdateClassesRequest" nillable="true" type="q5:UpdateClassesRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateClassesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://JonasFitness.com/CompeteDataService/v2_0/Responses" minOccurs="0" name="UpdateClassesResult" nillable="true" type="q6:UpdateClassesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Requests" elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" />
+      <xs:complexType name="GetClassesRequest">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the GetClasses operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" base="q1:Deserializer">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="Classes" nillable="true" type="q2:ArrayOfClass">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify which Classes to return
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="Clubs" nillable="true" type="q3:ArrayOfClub">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify which clubs to return Classes for
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="ClubGroups" nillable="true" type="q4:ArrayOfClubGroup">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify which club groups to return Classes for
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q5="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="StartEndDateTime" nillable="true" type="q5:SimpleDateTimeRange">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Start and End DateTime range for the desired classes
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ClientDateTime" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Client DateTime, if provided the end time of any returned class must be after this time
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PagingRequestInfo">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Controls the amount of information that can be requested at once; Leaving this out will return all information up to the default(maximum) page size
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetClassesRequest" nillable="true" type="tns:GetClassesRequest" />
+      <xs:complexType name="PagingRequestInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Page" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            An integer representing the page being requested (default is 1)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PageSize" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            An integer representing the number of records requested for each page (default varies depending on operation)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PagingRequestInfo" nillable="true" type="tns:PagingRequestInfo" />
+      <xs:complexType name="InsertClassesRequest">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the InsertClasses operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element xmlns:q6="http://JonasFitness.com/CompeteDataService/v2_0/Common" name="Inserts" nillable="true" type="q6:ArrayOfClassInsert">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Collection of Classes to insert into the Compete database
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InsertClassesRequest" nillable="true" type="tns:InsertClassesRequest" />
+      <xs:complexType name="UpdateClassesRequest">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the UpdateClasses operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element xmlns:q7="http://JonasFitness.com/CompeteDataService/v2_0/Common" name="Updates" nillable="true" type="q7:ArrayOfClassUpdate">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Class that will be updated
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UpdateClassesRequest" nillable="true" type="tns:UpdateClassesRequest" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Deserializer">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="Deserializer" nillable="true" type="tns:Deserializer" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Common" elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfClass">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of Class objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Class" nillable="true" type="tns:Class" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClass" nillable="true" type="tns:ArrayOfClass" />
+      <xs:complexType name="Class">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Class information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Class" nillable="true" type="tns:Class" />
+      <xs:complexType name="ArrayOfClub">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple list of clubs with only their ID's
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Club" nillable="true" type="tns:Club" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClub" nillable="true" type="tns:ArrayOfClub" />
+      <xs:complexType name="Club">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Club information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Club
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Club" nillable="true" type="tns:Club" />
+      <xs:complexType name="ArrayOfClubGroup">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of ClubGroup objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ClubGroup" nillable="true" type="tns:ClubGroup" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClubGroup" nillable="true" type="tns:ArrayOfClubGroup" />
+      <xs:complexType name="ClubGroup">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal ClubGroup information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the ClubGroup
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ClubGroup" nillable="true" type="tns:ClubGroup" />
+      <xs:complexType name="SimpleDateTimeRange">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a range of DateTime
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Start" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The DateTime that begins the range
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="End" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The DateTime that ends the range
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SimpleDateTimeRange" nillable="true" type="tns:SimpleDateTimeRange" />
+      <xs:complexType name="ArrayOfGetClassData">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of Classes returned for a successful result
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GetClassData" nillable="true" type="tns:GetClassData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGetClassData" nillable="true" type="tns:ArrayOfGetClassData" />
+      <xs:complexType name="GetClassData">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains detailed class information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BarcodeID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Class' product BarCode ID as found in the DataEntry-Products view within Compete
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Short Description of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Club" nillable="true" type="tns:Club">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Club to which the Class is assigned
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StartEndTime" nillable="true" type="tns:SimpleDateTimeRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the start and end time of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StartEndDate" nillable="true" type="tns:SimpleDateTimeRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the first and last date on which the Class occurs
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LongDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Long Description of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Instructor" nillable="true" type="tns:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Intructor of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SubstituteInstructor" nillable="true" type="tns:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Substitute instructor of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Price" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Price of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GLCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            GLCode of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SellClubs" nillable="true" type="tns:ArrayOfClub">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            List of Clubs where the Class can be sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EnrollDaily" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates whether this is a class or a course (True = Class; False = Course)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AvailableDays" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Days the Class is available (Su, M, T, W, Th, F, S)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Capacity" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Total capacity of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RemainingCapacity" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Remaining capacity of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EnrolledCount" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Number of members enrolled in the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StandByCount" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Number of members on standby for the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AttendedCount" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Number of members that have attended the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Active" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if the Class is active
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EnrolledCustomers" nillable="true" type="tns:ArrayOfClassCustomer">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Collection of Customers who have enrolled in the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AttendedCustomers" nillable="true" type="tns:ArrayOfClassCustomer">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Collection of Customers who have attended the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ClassDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the date on which the Class occurs
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetClassData" nillable="true" type="tns:GetClassData" />
+      <xs:complexType name="Employee">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Employee information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Employee
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Employee" nillable="true" type="tns:Employee" />
+      <xs:complexType name="ArrayOfClassCustomer">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of ClassCustomer objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassCustomer" nillable="true" type="tns:ClassCustomer" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClassCustomer" nillable="true" type="tns:ArrayOfClassCustomer" />
+      <xs:complexType name="ClassCustomer">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a Customer who has either attended or enrolled in a Class
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Customer">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ActionDate" type="xs:dateTime">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Indicates the time the Customer attended or enrolled in the Class
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="EnrollmentStatus" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Indicates the status of the Customer's enrollment in the Class (null if this is an attended record)
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ClassCustomer" nillable="true" type="tns:ClassCustomer" />
+      <xs:complexType name="Customer">
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Customer
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Customer" nillable="true" type="tns:Customer" />
+      <xs:complexType name="ArrayOfClassInsert">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of InsertClass objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassInsert" nillable="true" type="tns:ClassInsert" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClassInsert" nillable="true" type="tns:ArrayOfClassInsert" />
+      <xs:complexType name="ClassInsert">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a Class with detailed information.  To be used for InsertClasses.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="BarcodeID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Class' product BarCode ID as found in the DataEntry-Products view within Compete
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Short Description of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Club" nillable="true" type="tns:Club">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Club to which the Class is assigned
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StartEndTime" nillable="true" type="tns:SimpleDateTimeRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the start and end time of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StartEndDate" nillable="true" type="tns:SimpleDateTimeRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the first and last date on which the Class occurs
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LongDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Long Description of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Instructor" nillable="true" type="tns:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Intructor of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Price" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Price of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GLCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            GLCode of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SellClubs" nillable="true" type="tns:ArrayOfClub">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            List of Clubs where the Class can be sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EnrollDaily" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates whether this is a class or a course (True = Class; False = Course)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AvailableDays" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Days the Class is available (Su, M, T, W, Th, F, S)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Capacity" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Total capacity of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Active" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if the Class is active
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ClassInsert" nillable="true" type="tns:ClassInsert" />
+      <xs:complexType name="ArrayOfClassUpdate">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of UpdateClassData objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassUpdate" nillable="true" type="tns:ClassUpdate" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClassUpdate" nillable="true" type="tns:ArrayOfClassUpdate" />
+      <xs:complexType name="ClassUpdate">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a Class with detailed information.  To be used for UpdateClass.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BarcodeID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Class' product BarCode ID as found in the DataEntry-Products view within Compete
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Short Description of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Club" nillable="true" type="tns:Club">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Club to which the Class is assigned
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StartEndTime" nillable="true" type="tns:SimpleDateTimeRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the start and end time of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StartEndDate" nillable="true" type="tns:SimpleDateTimeRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the first and last date on which the Class occurs
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LongDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Long Description of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Instructor" nillable="true" type="tns:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Intructor of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Price of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GLCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            GLCode of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SellClubs" nillable="true" type="tns:ArrayOfClub">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            List of Clubs where the Class can be sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EnrollDaily" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates whether this is a class or a course (True = Class; False = Course)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AvailableDays" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Days the Class is available (Su, M, T, W, Th, F, S)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Capacity" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Total capacity of the Class
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if the Class is active
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ClassUpdate" nillable="true" type="tns:ClassUpdate" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Responses" elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" />
+      <xs:complexType name="GetClassesResponse">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data sent back in response to a call to the GetClasses operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element xmlns:q1="http://JonasFitness.com/CompeteDataService/v2_0/Common" name="Classes" nillable="true" type="q1:ArrayOfGetClassData">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Collection of Classes returned for a successful result
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="PageInfo" nillable="true" type="tns:PagedResponseInfo">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Contains information regarding the current page of data being returned from a paged request
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetClassesResponse" nillable="true" type="tns:GetClassesResponse" />
+      <xs:complexType name="ResponseRoot">
+        <xs:sequence>
+          <xs:element name="StatusInfo" nillable="true" type="xs:anyType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Returns the status of the request execution
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ResponseRoot" nillable="true" type="tns:ResponseRoot" />
+      <xs:complexType name="StatusInfo">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" name="Status" type="q2:StatusCode">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            A StatusCode value giving a high level representation of the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Summary message providing further information regarding the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StatusInfo" nillable="true" type="tns:StatusInfo" />
+      <xs:complexType name="ErrorStatusInfo">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" name="Status" type="q3:StatusCode">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            A StatusCode value giving a high level representation of the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Summary message providing further information regarding the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ErrorNumber" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Can be used to indicate more precise failure reason when only a generic message may be returned
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RequestEcho" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            For certain failures, returns a copy of the passed in request for comparison purposes
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorStatusInfo" nillable="true" type="tns:ErrorStatusInfo" />
+      <xs:complexType name="PagedResponseInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains information regarding the current page of data being returned from a paged request
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Page" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The specific page being returned from the overall result set
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PageSize" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The number of records actually used to determine a page; This may be different from the requested page size if the requested page size was less than 1 or greater that maximum for the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TotalPages" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The total number of pages, based on PageSize
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TotalRecords" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The total number of records resulting from the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PagedResponseInfo" nillable="true" type="tns:PagedResponseInfo" />
+      <xs:complexType name="InsertClassesResponse">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the response to the InsertClasses request
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element name="Results" nillable="true" type="tns:ArrayOfInsertClassResult">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Collection of results for each class insert request
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="InsertClassesResponse" nillable="true" type="tns:InsertClassesResponse" />
+      <xs:complexType name="ArrayOfInsertClassResult">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Wraps a collection of InsertClassResult objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InsertClassResult" nillable="true" type="tns:InsertClassResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfInsertClassResult" nillable="true" type="tns:ArrayOfInsertClassResult" />
+      <xs:complexType name="InsertClassResult">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the result of an insert operation for a single Class.  If successful the ID of the class will be returned.  The BarcodeID can be used to link this result to the initial request.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="BarcodeID" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Class' product BarCode ID as found in the DataEntry-Products view within Compete
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="ClassID" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Identifier for the inserted class if the execution was successful
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="InsertClassResult" nillable="true" type="tns:InsertClassResult" />
+      <xs:complexType name="UpdateClassesResponse">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data sent back in response to a call to the UpdateClass operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element name="Results" nillable="true" type="tns:ArrayOfUpdateClassResult">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Results of each individual Class insert operation
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="UpdateClassesResponse" nillable="true" type="tns:UpdateClassesResponse" />
+      <xs:complexType name="ArrayOfUpdateClassResult">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of UpdateClassResult objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UpdateClassResult" nillable="true" type="tns:UpdateClassResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfUpdateClassResult" nillable="true" type="tns:ArrayOfUpdateClassResult" />
+      <xs:complexType name="UpdateClassResult">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the result of an Update operation for a single Class; ClassID can be used to link back to the original request
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element name="ClassID" type="xs:int">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The Class being updated
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="UpdateClassResult" nillable="true" type="tns:UpdateClassResult" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="StatusCode">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            StatusCode represents the state of the response
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Success">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            Successful execution of request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Warning">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            Partially successful request execution
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SystemError">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            The system failed to execute the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RequestError">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            The system refused to execute the request due to a problem with the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AuthenticationError">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            The request failed authentication
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="StatusCode" nillable="true" type="tns:StatusCode" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IClassService_GetClasses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClasses" />
+  </wsdl:message>
+  <wsdl:message name="IClassService_GetClasses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClassService_InsertClasses_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClasses" />
+  </wsdl:message>
+  <wsdl:message name="IClassService_InsertClasses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClassService_UpdateClasses_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClasses" />
+  </wsdl:message>
+  <wsdl:message name="IClassService_UpdateClasses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClassesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClassService">
+    <wsdl:documentation>&lt;summary&gt;
+            Provides a cohesive interface for retrieving, inserting, and updating Class data from Compete
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="GetClasses">
+      <wsdl:documentation>&lt;summary&gt;
+            Issues a call to retrieve a list of classes from Compete
+            &lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/GetClasses" message="tns:IClassService_GetClasses_InputMessage" />
+      <wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/IClassService/GetClassesResponse" message="tns:IClassService_GetClasses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClasses">
+      <wsdl:documentation>&lt;summary&gt;
+            Issues a call to insert one or more classes into Compete
+            &lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/InsertClasses" message="tns:IClassService_InsertClasses_InputMessage" />
+      <wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/IClassService/InsertClassesResponse" message="tns:IClassService_InsertClasses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClasses">
+      <wsdl:documentation>&lt;summary&gt;
+            Issues a call to update one or more classes already in Compete
+            &lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/UpdateClasses" message="tns:IClassService_UpdateClasses_InputMessage" />
+      <wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/IClassService/UpdateClassesResponse" message="tns:IClassService_UpdateClasses_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClassService" type="tns:IClassService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IClassService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClasses">
+      <soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/GetClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClasses">
+      <soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/InsertClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClasses">
+      <soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/ClassService/UpdateClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClassService">
+    <wsdl:port name="BasicHttpBinding_IClassService" binding="tns:BasicHttpBinding_IClassService">
+      <soap:address location="https://compete-dataservice.jfisoftware.com:8232/v2_0/ClassService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

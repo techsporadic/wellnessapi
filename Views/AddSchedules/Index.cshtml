@@ -1,0 +1,241 @@
+﻿@{
+    ViewBag.Title = "Schedules | Add";
+    ViewBag.TitleText = "Add Schedules";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="midSFPanel">
+    <div class="container-fluid">
+        <div id="sPage" class="form-row justify-content-end">
+            <div class="col-md-11">
+                <div class="form-row">
+                    <div class="col-md-1 col-3">
+                        <form id="fInline" class="form-inline">
+                            <label class="mr-2" for="inlineFormCustomSelectPref"></label>
+                            <select class="custom-select mr-sm-2 form-control-sm" id="changePageNum">
+                                <option selected="">10</option>
+                                <option>20</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-md-1 col-3">
+                        <div class="dropdown">
+                            <button class="btn btn-link btn-sm dropdown-toggle mt-2 mt-md-1" style="color:#808080; text-decoration:none;" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                            <div class="dropdown-menu">
+                                <form id="ubdAjaxH" class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">From: (Date)</label>
+                                        <input type="date" value="" id="dateFrom" name="dateFrom" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">To: (Date)</label>
+                                        <input type="date" value="" id="dateTo" name="dateTo" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput2">Schedule Type</label><br />
+                                        <select name="ScheduleType" id="nScheduleType" style="width: 100%; border: 1px solid #ededed;" class="custom-select">
+                                            <option value="" selected="selected">Select item...</option>
+                                            <option>Studio</option>
+                                            <option>Cycling</option>
+                                            <option>Yoga</option>
+                                            <option>Aqua</option>
+                                            <option>Group Training</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">Single: (Date)</label>
+                                        <input type="date" value="" id="dateSingle" name="dateSingle" class="form-control" />
+                                    </div>
+                                    <button type="submit" id="filterFormSubmit" class="btn btn-info btn-block">Filter</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <input type="text" class="form-control form-control-sm  mt-2 mt-md-1" id="sAny" placeholder="Search keywords ..." />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group" role="group" aria-label="First group">
+                        <button data-toggle="modal" data-target="#newZoneModal" title="Add New Zone" class="btn btn-light"><i class="fas fa-plus-circle"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="mainDataBody">
+        <section id="uftData">
+            <table class="table table-lg" id="TableId" align="center">
+                <thead>
+                    <tr>
+                        <td><div class="checkbox" style=""><label><input type="checkbox" name="select_all" value="1" id="Laptop"><span class="cr"><i class="cr-icon fas fa-check"></i></span></label></div></td>
+                        <td>Title</td>
+                        <td>Type</td>
+                        <td>Day</td>
+                        <td>Date</td>
+                        <td>Time From</td>
+                        <td>Time To</td>
+                        <td>Entered</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody class="trendingItems"></tbody>
+            </table>
+        </section>
+        <div class="row">
+            <div class="col-md-4">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="auxDataBody p-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4 auxBdr">
+                <p class="text-center text-secondary"><i class="fas fa-exclamation-triangle fa-5x"></i><br /><span class="nBrand text-muted">Data Load Failure Or Empty List</span><br /><a class="text-secondary refreshLnk" href=""><i class="fas fa-recycle"></i> Reload</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newZoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="ubdAjaxJ" class="modalForm">
+                            <small><a class="text-info" href="">New Schedule <i class="far fa-question-circle"></i></a></small>
+
+                            <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <br /><br />
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Title</label>
+                                <input type="text" class="form-control" id="Title" name="Title" placeholder="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Schedule Type</label>
+                                <select name="ScheduleType" id="ScheduleType" class="custom-select">
+                                    <option selected="selected">Select item...</option>
+                                    <option>Studio</option>
+                                    <option>Cycling</option>
+                                    <option>Yoga</option>
+                                    <option>Aqua</option>
+                                    <option>Group Training</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Schedule Date</label>
+                                <input type="date" class="form-control" id="ScheduleDate" name="ScheduleDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Time From</label>
+                                <input type="time" class="form-control" id="DateTimeFrom" name="DateTimeFrom">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Time To</label>
+                                <input type="time" class="form-control" id="DateTimeTo" name="DateTimeTo">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="addSchedule" class="btn btn-dark">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modifyScheduleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="ubdAjaxK" class="modalForm">
+                            <small><a class="text-info" href="">Modify Schedule <i class="far fa-question-circle"></i></a></small>
+
+                            <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <br /><br />
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Title</label>
+                                <input type="text" class="form-control" id="mTitle" name="Title" placeholder="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Schedule Type</label>
+                                <select name="ScheduleType" id="mScheduleType" class="custom-select">
+                                    <option selected="selected">Select item...</option>
+                                    <option>Studio</option>
+                                    <option>Cycling</option>
+                                    <option>Yoga</option>
+                                    <option>Aqua</option>
+                                    <option>Group Training</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Schedule Date</label>
+                                <input type="date" class="form-control" id="mScheduleDate" name="ScheduleDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Time From</label>
+                                <input type="time" class="form-control" id="mTimeFrom" name="DateTimeFrom">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Time To</label>
+                                <input type="time" class="form-control" id="mTimeTo" name="DateTimeTo">
+                                <input type="hidden" id="mId" name="Id">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="modifySchedule" class="btn btn-dark">Commit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="data-item-template">
+    <tr><td><div class="checkbox" style=""><label><input type="checkbox" name="" value="" id="Laptop"><span class="cr"><i class="cr-icon fas fa-check"></i></span></label></div></td><td title="${Title}">{{html truncateString(Title, 17) }}</td><td>${ScheduleType}</td><td>${DayOfTheWeek}</td><td>{{html getRealDate(ScheduleDate) }}</td><td>{{html getRealTime(TimeFrom) }}</td><td>{{html getRealTime(TimeTo) }}</td><td>{{html getRealDate(TimeEntered) }}</td><td id="${Id}" title="${Title}" scheduletype="${ScheduleType}" scheduledate="${ScheduleDate}" timefrom="${TimeFrom}" timeto="${TimeTo}" data-toggle="modal" data-target="#modifyScheduleModal" class="editRecord"><a href="#" class="noColor"><i class="fas fa-pencil-alt"></i></a></td><td id="${Id}" zonetitle="${Title}" title="" data-toggle="modal" data-target="#reportIssueModal" class="deleteSchedule"><a href="#" class="noColor"><i class="fas fa-times-circle"></i></a></td></tr>
+</script>
+
+
+@section Scripts {
+    <script src="/Scripts/date.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="/Scripts/datatables/manager/cdb1.js"></script>
+    <script>
+        $(function () {
+
+        });
+    </script>
+    <script type="text/javascript" src="/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.easy-autocomplete.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Dynamic_State_LGA.js"></script>
+
+}
+
+

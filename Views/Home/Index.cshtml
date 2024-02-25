@@ -1,0 +1,215 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main id="main">
+    <section class="content-section" id="content" style="background-image:url(https://wellnessinstitute.ca/wp-content/themes/thewellnessinstitute/images/img-21.png)">
+        <div class="heading-block">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <div class="text-center">
+                            <h1>Weekly Classes Schedule</h1>
+                            <h4></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="fl-builder-content fl-builder-content-8808 fl-builder-content-primary" data-post-id="8808">               
+
+                    <div class="fl-row fl-row-full-width fl-row-bg-none fl-node-59934c540f92d" data-node="59934c540f92d">
+                        <div class="fl-row-content-wrap">
+                            <div class="fl-row-content fl-row-full-width fl-node-content">
+
+                                <div class="fl-col-group fl-node-59934c540ffba" data-node="59934c540ffba">
+                                    <div class="fl-col fl-node-59934c541009a" data-node="59934c541009a">
+                                        <div class="fl-col-content fl-node-content">
+                                            <div class="fl-module fl-module-rich-text fl-node-59934c5411700" data-node="59934c5411700">
+                                                <div class="fl-module-content fl-node-content">
+                                                    <div class="fl-rich-text">
+                                                        <p><span style="font-size: 18px;"><span style="font-size: 22px;"><strong>Members: </strong></span>Browse free, weekly exercise classes, Group Training sessions (valid package required for booking) and programs.&nbsp;</span></p>
+                                                        <p><span style="font-size: 18px;"><span style="font-size: 20px;"><strong><span style="font-size: 22px;">Guests:</span> </strong></span><a href="https://wellnessinstitute.ca/guests">Find out more about attending weekly classes or programs as a non-member.</a></span></p>
+                                                        <hr>
+                                                        <p><span style="font-size: 18px;"><span style="font-size: 22px;"><strong>Booking your Class:</strong></span> Please review our <a href="https://wellnessinstitute.ca/class-policies/">class and booking rules</a>. When you are ready to enroll, you can <a href="https://wellnessinstitute.ca/log-in/">book online</a>, call 204-632-3900 or visit our front desk. For more about joining full seasonal program sessions, <a href="https://wellnessinstitute.ca/program-registration/">visit our program registration page</a>.</span></p>
+                                                        <p><span style="font-size: 18px;">If you don't yet have log in credentials, contact us at 204-632-3900 or email <a href="mailto:info@wellnessinstitute.ca">info@wellnessinstitute.ca</a> for temporary log-in details.</span></p>
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fl-col-group fl-node-5edace8e00e18" data-node="5edace8e00e18">
+                                    <div class="fl-col fl-node-5edace8e00ede fl-col-small" data-node="5edace8e00ede">
+                                        <div class="fl-col-content fl-node-content">
+                                            <div class="fl-module fl-module-rich-text fl-node-5edace9b67c08" data-node="5edace9b67c08">
+                                                <div class="fl-module-content fl-node-content">
+                                                    <div class="fl-rich-text">
+                                                        <p><a class="btn btn-success" href="https://wellnessinstitute.ca/wp-content/uploads/2020/08/ESWeeklyClasses-WEB.pdf" target="_blank" rel="noopener"><span style="font-size: 18px;">Get the Printable Weekly Class Schedule</span></a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fl-col fl-node-5edace8e00ee3" data-node="5edace8e00ee3">
+                                        <div class="fl-col-content fl-node-content">
+                                            <div class="fl-module fl-module-rich-text fl-node-5edacee52ff59" data-node="5edacee52ff59">
+                                                <div class="fl-module-content fl-node-content">
+                                                    <div class="fl-rich-text">
+                                                        <p><a class="btn btn-primary" href="https://wellnessinstitute.ca/log-in"><span style="font-size: 18px;">Log-in to Book Online Now</span></a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="form-row">
+                        <div class="col-md-2">
+                            <label>Date</label>
+                            <input type="date" style="color:#000;" class="form-control" id="dateFrom" name="dateFrom" />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Time</label>
+                            <input type="time" style="color:#000;" class="form-control" id="timeFrom" name="timeFrom" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Keyword</label>
+                            <input type="text" style="color:#000;" class="form-control" id="keyword" name="keyword" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Category</label>
+                            <select class="form-control" style="color:#000;" id="category" name="category">
+                                <option value="">Select</option>
+                                <option>Studio</option>
+                                <option>Aqua</option>
+                                <option>Yoga</option>
+                                <option>Group Training</option>
+                                <option>Stretchbreaks</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <br />
+                            <input type="submit" style="color:#fff;" class="btn btn-primary btn-block" id="submitData" name="submitData" />
+                        </div>
+                    </div>
+                    <br /><br /><br /><br />
+                    <table class="table table-borderless table-striped" cellpadding="0" cellspacing="0" width="100%">
+                        <thead>
+                            <tr><th width="32%">Title</th><th width="15%">Time Start</th><th width="15%">Time End</th><th width="38%">Description</th></tr>
+                        </thead>
+                        <tbody class="dataBind"></tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</main>
+
+
+
+@section Scripts {
+    <script type="text/javascript">
+
+        function truncateString(ostr, numm) {
+
+            var num = numm;
+            var str = "";
+            str = ostr;
+            if (num < str.length) {
+                str = str.slice(0, num);
+                return str + "...";
+            }
+            else {
+                return str;
+            }
+
+        }
+
+        function getData(id, rtype, start, end, timeStart, timeEnd) {
+
+            var vsdate = "";
+
+            var modal;
+
+            modal = $('<div>').dialog({ modal: true });
+            modal.dialog('widget').hide();
+
+            $.ajax({
+                type: "GET",
+                url: "/api/ApiUtilities/getSchedules?id=" + id + "&rtype=" + rtype + "&start=" + start + "&end=" + end + "&timeStart=" + timeStart + "&timeEnd=" + timeEnd,
+                contentType: "application/json; charset=utf-8",
+                data: {},
+                dataType: "json",
+                success: function (result) {
+                    $(".dataBind").empty();
+                    $.each(result, function (k, v) {
+                        vsdate = v.sDate;
+
+                        if (k > 0) {
+                            if (result[k - 1].sDate != v.sDate) {
+                                $(".dataBind").append("<tr><td><br></td><td></td><td></td><td></td></tr>");
+                                $(".dataBind").append("<tr><td><b>" + v.sDate + "</b></td></td><td></td><td></td><td></td></tr>");
+                                $(".dataBind").append("<tr><th>Title</th><th>Time Start</th><th>Time End</th><th>Description</th></tr>");
+                            }
+                        }
+
+                        else {
+                            $(".dataBind").append("<tr><td><b>" + v.sDate + "</b></td></td><td></td><td></td><td></td></tr>");
+                        }
+
+                        $(".dataBind").append("<tr><td>" + v.text + "</td><td>" + v.tStart + "</td><td>" + v.tEnd + "</td><td title='" + v.longtext + "'>" + v.longtext + "</td></tr>");
+
+                    });
+                    modal.dialog('close');
+                },
+                complete: function () {
+                    modal.dialog('close');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.ErrorMsg + " " + textStatus + " " + errorThrown);
+
+                }
+            });
+        }
+
+        $(function () {
+            getData("All", "fresh", "2020-06-17T14:15:00", "2020-06-17T14:15:00","", "");
+
+            $("#submitData").click(function () {
+
+                var kword = "";
+
+                if (!$('#keyword').val() && !$('#category').val()) {
+                    kword = "none";
+                }
+
+                else if ($('#category').val() && $('#category').val() != "") {
+                    kword = $('#category').val();
+                }
+
+                else {
+                    kword = $('#keyword').val();
+                }
+
+                getData(kword, "search", $('#dateFrom').val(), "", $('#timeFrom').val(), "");
+                
+            });
+
+        });
+
+</script>
+
+
+    }
+

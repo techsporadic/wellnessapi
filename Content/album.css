@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Luckiest Guy');
+.navbar {
+  margin-bottom: 0;
+  background: transparent;
+}
+
+.navbar2 {
+  margin-bottom: 0;
+  background: #f9f0c0;
+}
+
+#snav {
+  background: #ffdfd1;
+}
+
+
+.jumbotron {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-bottom: 0;
+  background: transparent;
+  border-bottom: 1px #ddd4d2 solid;
+}
+
+.dBg {
+    background: url(../img/bg1.jpg);
+    background-size: cover;
+}
+
+.stylelink a 
+{
+      position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    touch-action: manipulation;
+    cursor: auto;
+}
+
+.stylelink a:focus, .stylelink a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #6F95BF;
+    border-color: #ddd;
+}
+
+li .active a {color: #fff;
+    text-decoration: none;
+    background-color: #6F95BF;}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.mphone {position: absolute; color:white; font-weight: bolder; top:17px; margin-left: 18px; font-size: 27px;}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+#fcall {color: white;}
+
+.album { /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: transparent;
+}
+
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+time.icon
+{
+  font-size: 1em; /* change icon size */
+  display: block;
+  position: relative;
+  width: 7em;
+  height: 8em;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+time.icon *
+{
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+time.icon strong
+{
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: #ffdfd1;
+  box-shadow: 0 2px 0 #ffdfd1;
+}
+
+time.icon em
+{
+  position: absolute;
+  bottom: 0.3em;
+  color: #ffdfd1;
+}
+
+time.icon span
+{
+  font-size: 2.8em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: #2f2f2f;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.htitle {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.nomargin {
+    margin-bottom: 0px;
+}
+
+#incfont {
+    font-size: 18px;
+}
+
+.wrapTip {font-style: italic; background-color: #f7eda3; padding: 10px; color:#878d96; border-radius: 10px;}
+
+.orange-text {
+    color: #ff9800 !important;
+}
+.reduceWeight{font-weight: 100; font-family: Calibri; font-size: 28px;}
+
+.reduceWeight1{font-weight: 100; font-family: Calibri; font-size: 20px;}
+
+.itemId {text-align: center; padding: 5px; border-top-right-radius: 5px; border-bottom-left-radius: 5px; color:#000; font-size: 14px; font-weight: bolder; position: absolute; width:90px; right: 0px;}
+.oosId {color:#f7854c; font-size: 14px; font-weight: bolder; position: absolute; width:90px; left: 59%; bottom: 2%;}
+.cartcounter {background: #f7eda3; color:#000; padding: 1px 6px 1px 6px; border-radius: 10px; position: absolute; top:10%; left:90.5%; }
+.card {border:1px #fce3db solid;}
+
+  .lform input[type=text],input[type=number] {border-radius: 15px; border: 2px #4b8da3 solid;}
+
+  .lform2 input[type=text],input[type=number],input[type=file],input[type=password],input[type=email] {border: 2px #4b8da3 solid;}
+
+        #payOptions label { font-size:20px; }
+
+  .tmNum {background: #6F95BF; padding: 2px 6px 2px 6px; color: #fff; border-radius: 6px;}
+
+  #midNav li a { color: #fff; font-weight: bolder; }
+  #midNav2 li a { color: #4b5a72; font-weight: bolder; }
+  #midNav2 li a i { color: #4b5a72; }
+        
+        /* fluid 5 columns */
+.grid-sizer,
+.grid-item { margin-bottom: 10px;}
+.grid-item img {
+    -webkit-filter: brightness(100%); /* Safari */
+    filter: brightness(100%);
+}
+
+#tablStyle {border-left:4px #d2dbdd solid; border-right:4px #d2dbdd solid; font-weight: bolder; color: #5b6263; background: #fff; border-radius: 30px;}
+#tablStyle td a {color: #717c68;}
+
+/* 2 columns */
+.grid-item--width2 { width: 40%; }
+.grid {
+  margin: 0 auto;
+}
+.indi {background: url('img/bg.png'); padding:10px 10px 0px 10px; position: absolute; z-index: 5555; bottom:80px; width: 100%;}
+.indi p { color: #671b1b; font-size:19px; font-weight: bolder; opacity:1.0;}
+.indi h4 { color: #a63131; font-weight: bolder; font-size:26px; opacity:1.0;}
+#pev {margin-left:3px;margin-right:3px; color:#fff; background: #ffa0a0;padding:17px;}
+
+.cartImgPopup{
+    position:absolute;
+    left:30%;
+    top:4%;
+    z-index: 9999;
+}
+
+#page-cover {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v5/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+}
+
+.icon-addon:after {
+    clear: both;
+}
+
+#imgDisp{border-left:6px #c0cee5 solid; border-bottom:6px #c0cee5 solid; bord#4b5a72;er-right:6px #c0cee5 solid;}
+
+card-img-top {width: 260px !important; height: 260px !important;}
+
+a .fa-shopping-cart {color: #fff;}
+
+.bgTp {background: transparent; color: #4b5a72;}
+
+.bgTpp {background: #6F95BF;}
+
+.bgCl {background: #99bad8; background: rgba(165, 178, 204, 0.5); border-bottom: 1px #212938 solid;}
+
+@media screen and (min-width: 0px) and (max-width: 795px) {
+  #midNav { display: none; }
+  #midNav2 { display: none; }
+}
+
+@media screen and (min-width: 796px) and (max-width: 1624px) {
+  #midNav { display: all; }
+  #midNav2 { display: all; }
+}
+
+
+/* a .fa {color: #fff;} */
+.icon-addon.addon-md .glyphicon,
+.icon-addon .glyphicon, 
+.icon-addon.addon-md .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px
+}
+
+.icon-addon.addon-lg .form-control {
+    line-height: 1.33;
+    height: 46px;
+    font-size: 18px;
+    padding: 10px 16px 10px 40px;
+}
+
+.imperial h4 {
+ overflow: hidden;
+ text-align: center;
+ color:#6F95BF;
+}
+.imperial h4:before,
+.imperial h4:after {
+ background-color: #6F95BF;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
+}
+.imperial h4:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+.imperial h4:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
+.icon-addon.addon-sm .form-control {
+    height: 30px;
+    padding: 5px 10px 5px 28px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.icon-addon.addon-lg .fa,
+.icon-addon.addon-lg .glyphicon {
+    font-size: 18px;
+    margin-left: 0;
+    left: 11px;
+    top: 4px;
+}
+
+.icon-addon.addon-md .form-control,
+.icon-addon .form-control {
+    padding-left: 30px;
+    float: left;
+    font-weight: normal;
+}
+
+.icon-addon.addon-sm .fa,
+.icon-addon.addon-sm .glyphicon {
+    margin-left: 0;
+    font-size: 12px;
+    left: 5px;
+    top: -1px
+}
+
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon,
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}

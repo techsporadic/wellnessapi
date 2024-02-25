@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?><wsdl:definitions name="EmployeeService" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"><wsp:Policy wsu:Id="BasicHttpBinding_IEmployeeService_policy"><wsp:ExactlyOne><wsp:All><sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy"><wsp:Policy><sp:TransportToken><wsp:Policy><sp:HttpsToken RequireClientCertificate="true"/></wsp:Policy></sp:TransportToken><sp:AlgorithmSuite><wsp:Policy><sp:Basic256/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy><sp:Strict/></wsp:Policy></sp:Layout></wsp:Policy></sp:TransportBinding></wsp:All></wsp:ExactlyOne></wsp:Policy><wsdl:types><xs:schema elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService" xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Requests"/><xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Responses"/><xs:element name="GetEmployees"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="GetEmployeesRequest" nillable="true" type="q1:GetEmployeesRequest" xmlns:q1="http://JonasFitness.com/CompeteDataService/v2_0/Requests"/></xs:sequence></xs:complexType></xs:element><xs:element name="GetEmployeesResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="GetEmployeesResult" nillable="true" type="q2:GetEmployeesResponse" xmlns:q2="http://JonasFitness.com/CompeteDataService/v2_0/Responses"/></xs:sequence></xs:complexType></xs:element><xs:element name="InsertEmployees"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="InsertEmployeesRequest" nillable="true" type="q3:InsertEmployeesRequest" xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Requests"/></xs:sequence></xs:complexType></xs:element><xs:element name="InsertEmployeesResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="InsertEmployeesResult" nillable="true" type="q4:InsertEmployeesResponse" xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Responses"/></xs:sequence></xs:complexType></xs:element><xs:element name="UpdateEmployees"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="UpdateEmployeesRequest" nillable="true" type="q5:UpdateEmployeesRequest" xmlns:q5="http://JonasFitness.com/CompeteDataService/v2_0/Requests"/></xs:sequence></xs:complexType></xs:element><xs:element name="UpdateEmployeesResponse"><xs:complexType><xs:sequence><xs:element minOccurs="0" name="UpdateEmployeesResult" nillable="true" type="q6:UpdateEmployeesResponse" xmlns:q6="http://JonasFitness.com/CompeteDataService/v2_0/Responses"/></xs:sequence></xs:complexType></xs:element></xs:schema><xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/"><xs:element name="anyType" nillable="true" type="xs:anyType"/><xs:element name="anyURI" nillable="true" type="xs:anyURI"/><xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/><xs:element name="boolean" nillable="true" type="xs:boolean"/><xs:element name="byte" nillable="true" type="xs:byte"/><xs:element name="dateTime" nillable="true" type="xs:dateTime"/><xs:element name="decimal" nillable="true" type="xs:decimal"/><xs:element name="double" nillable="true" type="xs:double"/><xs:element name="float" nillable="true" type="xs:float"/><xs:element name="int" nillable="true" type="xs:int"/><xs:element name="long" nillable="true" type="xs:long"/><xs:element name="QName" nillable="true" type="xs:QName"/><xs:element name="short" nillable="true" type="xs:short"/><xs:element name="string" nillable="true" type="xs:string"/><xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/><xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/><xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/><xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/><xs:element name="char" nillable="true" type="tns:char"/><xs:simpleType name="char"><xs:restriction base="xs:int"/></xs:simpleType><xs:element name="duration" nillable="true" type="tns:duration"/><xs:simpleType name="duration"><xs:restriction base="xs:duration"><xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/><xs:minInclusive value="-P10675199DT2H48M5.4775808S"/><xs:maxInclusive value="P10675199DT2H48M5.4775807S"/></xs:restriction></xs:simpleType><xs:element name="guid" nillable="true" type="tns:guid"/><xs:simpleType name="guid"><xs:restriction base="xs:string"><xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/></xs:restriction></xs:simpleType><xs:attribute name="FactoryType" type="xs:QName"/><xs:attribute name="Id" type="xs:ID"/><xs:attribute name="Ref" type="xs:IDREF"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Requests"><xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Common"/><xs:import namespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests"/><xs:complexType name="GetEmployeesRequest"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the GetEmployees operation
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="q1:Deserializer" xmlns:q1="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests"><xs:sequence><xs:element minOccurs="0" name="Clubs" nillable="true" type="q2:ArrayOfClub" xmlns:q2="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Specify which clubs to return employees for
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Employees" nillable="true" type="q3:ArrayOfEmployee" xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Optionally Specify which employees to return
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ClubGroups" nillable="true" type="q4:ArrayOfClubGroup" xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Optionally Specify which club groups to return employees for
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PagingRequestInfo"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Controls the amount of information that can be requested at once; Leaving this out will return all information up to the default(maximum) page size
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="GetEmployeesRequest" nillable="true" type="tns:GetEmployeesRequest"/><xs:complexType name="PagingRequestInfo"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="Page" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            An integer representing the page being requested (default is 1)
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PageSize" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            An integer representing the number of records requested for each page (default varies depending on operation)
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="PagingRequestInfo" nillable="true" type="tns:PagingRequestInfo"/><xs:complexType name="InsertEmployeesRequest"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the InsertEmployee operation
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element name="Inserts" nillable="true" type="q5:ArrayOfEmployeeInsert" xmlns:q5="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Employees that will be inserted
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="InsertEmployeesRequest" nillable="true" type="tns:InsertEmployeesRequest"/><xs:complexType name="UpdateEmployeesRequest"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the UpdateEmployees operation
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element name="Updates" nillable="true" type="q6:ArrayOfEmployeeUpdate" xmlns:q6="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employees to be updated
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="UpdateEmployeesRequest" nillable="true" type="tns:UpdateEmployeesRequest"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests"><xs:complexType name="Deserializer"><xs:sequence/></xs:complexType><xs:element name="Deserializer" nillable="true" type="tns:Deserializer"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:complexType name="ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Simple list of clubs with only their ID's
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="Club" nillable="true" type="tns:Club"/></xs:sequence></xs:complexType><xs:element name="ArrayOfClub" nillable="true" type="tns:ArrayOfClub"/><xs:complexType name="Club"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Club information
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element name="ID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Club
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="Club" nillable="true" type="tns:Club"/><xs:complexType name="ArrayOfEmployee"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Simple list of Employees with only their ID's
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee"/></xs:sequence></xs:complexType><xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee"/><xs:complexType name="Employee"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Employee information
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="ID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="Employee" nillable="true" type="tns:Employee"/><xs:complexType name="ArrayOfClubGroup"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Collection of ClubGroup objects
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="ClubGroup" nillable="true" type="tns:ClubGroup"/></xs:sequence></xs:complexType><xs:element name="ArrayOfClubGroup" nillable="true" type="tns:ArrayOfClubGroup"/><xs:complexType name="ClubGroup"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal ClubGroup information
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element name="ID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the ClubGroup
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="ClubGroup" nillable="true" type="tns:ClubGroup"/><xs:complexType name="ArrayOfDetailedEmployee"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Wraps a collection of DetailedEmployee objects
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="DetailedEmployee" nillable="true" type="tns:DetailedEmployee"/></xs:sequence></xs:complexType><xs:element name="ArrayOfDetailedEmployee" nillable="true" type="tns:ArrayOfDetailedEmployee"/><xs:complexType name="DetailedEmployee"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee class which contains significant details about the employee being returned
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Indicates whether or not the employee is active
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Second line of employee's address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="BarcodeID" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the unique identifier of the Employee as found in Compete
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="City" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            City employee lives in
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Club" nillable="true" type="tns:Club"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Club the Employee is associated with
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ClubAccess" nillable="true" type="tns:ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Clubs the employee has access to
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Date the employee was born
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's email address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmergencyContact" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's emergency contact name
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmergencyPhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's emergency contact's phone number
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            First name of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's home phone
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="ID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Internal reference ID of the employee, ignored from the data contract
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="InstructorSearchClubs" nillable="true" type="tns:ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Clubs that the employee can be search by as an instructor
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Last name of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MiddleInitial" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Middle initial of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's mobile phone number
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PreferredName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the preferred name of the employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="State" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            State employee lives in
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Zip code employee lives in 
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="DetailedEmployee" nillable="true" type="tns:DetailedEmployee"/><xs:complexType name="ArrayOfEmployeeInsert"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            List of employees with all information to be used when creating an employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeInsert" nillable="true" type="tns:EmployeeInsert"/></xs:sequence></xs:complexType><xs:element name="ArrayOfEmployeeInsert" nillable="true" type="tns:ArrayOfEmployeeInsert"/><xs:complexType name="EmployeeInsert"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Object with all employee information to be used when inserting
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Indicates whether or not the employee is active
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Second line of employee's address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="BarcodeID" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the unique identifier of the Employee as found in Compete
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="City" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            City employee lives in
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Club" nillable="true" type="tns:Club"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Club the Employee is associated with
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ClubAccess" nillable="true" type="tns:ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Clubs the employee has access to
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Date the employee was born
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's email address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmergencyContact" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's emergency contact name
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmergencyPhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's emergency contact's phone number
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            First name of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's home phone
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="InstructorSearchClubGroups" nillable="true" type="tns:ArrayOfClubGroup"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            ClubGroups that the employee can be searched by as an instructor; combines with InstructorSearchClubs
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="InstructorSearchClubs" nillable="true" type="tns:ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Clubs that the employee can be searched by as an instructor; combines with InstructorSearchClubGroups
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Last name of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MiddleInitial" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Middle initial of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's mobile phone number
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PreferredName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the preferred name of the employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="State" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            State employee lives in
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Zip code employee lives in 
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="Password" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Password for the user
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="EmployeeInsert" nillable="true" type="tns:EmployeeInsert"/><xs:complexType name="ArrayOfEmployeeUpdate"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            List of employees with all information to be used when updating 
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeUpdate" nillable="true" type="tns:EmployeeUpdate"/></xs:sequence></xs:complexType><xs:element name="ArrayOfEmployeeUpdate" nillable="true" type="tns:ArrayOfEmployeeUpdate"/><xs:complexType name="EmployeeUpdate"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Object with all employee information to be used when updating
+            &lt;seealso cref="T:Common.IDetailedEmployee" /&gt;
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Indicates whether or not the employee is active
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Second line of employee's address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="BarcodeID" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the unique identifier of the Employee as found in Compete
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="City" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            City employee lives in
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Club" nillable="true" type="tns:Club"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Club the Employee is associated with
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ClubAccess" nillable="true" type="tns:ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Clubs the employee has access to
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Date the employee was born
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's email address
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmergencyContact" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's emergency contact name
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmergencyPhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's emergency contact's phone number
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            First name of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's home phone
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="ID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Internal reference ID of the employee, ignored from the data contract
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="InstructorSearchClubGroups" nillable="true" type="tns:ArrayOfClubGroup"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            ClubGroups that the employee can be searched by as an instructor; combines with InstructorSearchClubs
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="InstructorSearchClubs" nillable="true" type="tns:ArrayOfClub"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Clubs that the employee can be searched by as an instructor; combines with InstructorSearchClubGroups
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Last name of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MiddleInitial" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Middle initial of employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Employee's mobile phone number
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="PreferredName" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Represents the preferred name of the employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="State" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            State employee lives in
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Zip code employee lives in 
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="EmployeeUpdate" nillable="true" type="tns:EmployeeUpdate"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Responses"><xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Common"/><xs:import namespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses"/><xs:complexType name="GetEmployeesResponse"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains the data sent back in response to a call to the GetEmployees operation
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:ResponseRoot"><xs:sequence><xs:element name="Employees" nillable="true" type="q1:ArrayOfDetailedEmployee" xmlns:q1="http://JonasFitness.com/CompeteDataService/v2_0/Common"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Collection of Employees returned for a successful result
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="PageInfo" nillable="true" type="tns:PagedResponseInfo"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains information regarding the current page of data being returned from a paged request
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="GetEmployeesResponse" nillable="true" type="tns:GetEmployeesResponse"/><xs:complexType name="ResponseRoot"><xs:sequence><xs:element name="StatusInfo" nillable="true" type="xs:anyType"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Returns the status of the request execution
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="ResponseRoot" nillable="true" type="tns:ResponseRoot"/><xs:complexType name="StatusInfo"><xs:sequence><xs:element name="Status" type="q2:StatusCode" xmlns:q2="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            A StatusCode value giving a high level representation of the request outcome
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="Message" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Summary message providing further information regarding the request outcome
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="StatusInfo" nillable="true" type="tns:StatusInfo"/><xs:complexType name="ErrorStatusInfo"><xs:sequence><xs:element name="Status" type="q3:StatusCode" xmlns:q3="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            A StatusCode value giving a high level representation of the request outcome
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="Message" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Summary message providing further information regarding the request outcome
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="ErrorNumber" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Can be used to indicate more precise failure reason when only a generic message may be returned
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="RequestEcho" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            For certain failures, returns a copy of the passed in request for comparison purposes
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="ErrorStatusInfo" nillable="true" type="tns:ErrorStatusInfo"/><xs:complexType name="PagedResponseInfo"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains information regarding the current page of data being returned from a paged request
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element name="Page" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The specific page being returned from the overall result set
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="PageSize" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The number of records actually used to determine a page; This may be different from the requested page size if the requested page size was less than 1 or greater that maximum for the request
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="TotalPages" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The total number of pages, based on PageSize
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element name="TotalRecords" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The total number of records resulting from the request
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:complexType><xs:element name="PagedResponseInfo" nillable="true" type="tns:PagedResponseInfo"/><xs:complexType name="InsertEmployeesResponse"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Holds the status of employees that were inserted
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:ResponseRoot"><xs:sequence><xs:element name="Results" nillable="true" type="tns:ArrayOfInsertEmployeeResult"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Holds the results of attempting to add each Employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="InsertEmployeesResponse" nillable="true" type="tns:InsertEmployeesResponse"/><xs:complexType name="ArrayOfInsertEmployeeResult"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Wraps a collection of InsertEmployeeResult objects
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="InsertEmployeeResult" nillable="true" type="tns:InsertEmployeeResult"/></xs:sequence></xs:complexType><xs:element name="ArrayOfInsertEmployeeResult" nillable="true" type="tns:ArrayOfInsertEmployeeResult"/><xs:complexType name="InsertEmployeeResult"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains the result of an insert operation for a single Employee.  If successful the ID of the employee will be returned.  The BarcodeID can be used to link this result to the intial request.
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:ResponseRoot"><xs:sequence><xs:element name="BarcodeID" nillable="true" type="xs:string"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The Employee's BarcodeID, also known in Compete as the UserID
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element><xs:element minOccurs="0" name="EmployeeID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Identifier for the inserted employee if the execution was successful
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="InsertEmployeeResult" nillable="true" type="tns:InsertEmployeeResult"/><xs:complexType name="UpdateEmployeesResponse"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Holds the status of updates to a collection of Employees
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:ResponseRoot"><xs:sequence><xs:element name="Results" nillable="true" type="tns:ArrayOfUpdateEmployeeResult"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Holds the results of attempting to update each Employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="UpdateEmployeesResponse" nillable="true" type="tns:UpdateEmployeesResponse"/><xs:complexType name="ArrayOfUpdateEmployeeResult"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Wraps up a collection of UpdateEmployeeResult objects
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:sequence><xs:element minOccurs="0" maxOccurs="unbounded" name="UpdateEmployeeResult" nillable="true" type="tns:UpdateEmployeeResult"/></xs:sequence></xs:complexType><xs:element name="ArrayOfUpdateEmployeeResult" nillable="true" type="tns:ArrayOfUpdateEmployeeResult"/><xs:complexType name="UpdateEmployeeResult"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            Contains the data sent back in response to a call to the UpdateEmployeeResponse for each employee; EmployeeID can be used to link back to the original request
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:complexContent mixed="false"><xs:extension base="tns:ResponseRoot"><xs:sequence><xs:element name="EmployeeID" type="xs:int"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            The ID of the Employee
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:element></xs:sequence></xs:extension></xs:complexContent></xs:complexType><xs:element name="UpdateEmployeeResult" nillable="true" type="tns:UpdateEmployeeResult"/></xs:schema><xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses"><xs:simpleType name="StatusCode"><xs:annotation><xs:appinfo/><xs:documentation>&lt;summary&gt;
+            StatusCode represents the state of the response
+            &lt;/summary&gt;</xs:documentation></xs:annotation><xs:restriction base="xs:string"><xs:enumeration value="Success"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Successful execution of request
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="Warning"><xs:annotation><xs:documentation>&lt;summary&gt;
+            Partially successful request execution
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="SystemError"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The system failed to execute the request
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="RequestError"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The system refused to execute the request due to a problem with the request
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration><xs:enumeration value="AuthenticationError"><xs:annotation><xs:documentation>&lt;summary&gt;
+            The request failed authentication
+            &lt;/summary&gt;</xs:documentation></xs:annotation></xs:enumeration></xs:restriction></xs:simpleType><xs:element name="StatusCode" nillable="true" type="tns:StatusCode"/></xs:schema></wsdl:types><wsdl:message name="IEmployeeService_GetEmployees_InputMessage"><wsdl:part name="parameters" element="tns:GetEmployees"/></wsdl:message><wsdl:message name="IEmployeeService_GetEmployees_OutputMessage"><wsdl:part name="parameters" element="tns:GetEmployeesResponse"/></wsdl:message><wsdl:message name="IEmployeeService_InsertEmployees_InputMessage"><wsdl:part name="parameters" element="tns:InsertEmployees"/></wsdl:message><wsdl:message name="IEmployeeService_InsertEmployees_OutputMessage"><wsdl:part name="parameters" element="tns:InsertEmployeesResponse"/></wsdl:message><wsdl:message name="IEmployeeService_UpdateEmployees_InputMessage"><wsdl:part name="parameters" element="tns:UpdateEmployees"/></wsdl:message><wsdl:message name="IEmployeeService_UpdateEmployees_OutputMessage"><wsdl:part name="parameters" element="tns:UpdateEmployeesResponse"/></wsdl:message><wsdl:portType name="IEmployeeService"><wsdl:documentation>&lt;summary&gt;&#xD;
+            Provides a cohesive interface for retrieving, inserting, and updating employee data from Compete&#xD;
+            &lt;/summary&gt;</wsdl:documentation><wsdl:operation name="GetEmployees"><wsdl:documentation>&lt;summary&gt;&#xD;
+            Issues a call to retrieve a list of employees from Compete&#xD;
+            &lt;/summary&gt;</wsdl:documentation><wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/GetEmployees" message="tns:IEmployeeService_GetEmployees_InputMessage"/><wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/IEmployeeService/GetEmployeesResponse" message="tns:IEmployeeService_GetEmployees_OutputMessage"/></wsdl:operation><wsdl:operation name="InsertEmployees"><wsdl:documentation>&lt;summary&gt;&#xD;
+            Issues a call to insert one or more employees into Compete&#xD;
+            &lt;/summary&gt;</wsdl:documentation><wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/InsertEmployees" message="tns:IEmployeeService_InsertEmployees_InputMessage"/><wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/IEmployeeService/InsertEmployeesResponse" message="tns:IEmployeeService_InsertEmployees_OutputMessage"/></wsdl:operation><wsdl:operation name="UpdateEmployees"><wsdl:documentation>&lt;summary&gt;&#xD;
+            Issues a call to update one or more employees already in Compete&#xD;
+            &lt;/summary&gt;</wsdl:documentation><wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/UpdateEmployees" message="tns:IEmployeeService_UpdateEmployees_InputMessage"/><wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/IEmployeeService/UpdateEmployeesResponse" message="tns:IEmployeeService_UpdateEmployees_OutputMessage"/></wsdl:operation></wsdl:portType><wsdl:binding name="BasicHttpBinding_IEmployeeService" type="tns:IEmployeeService"><wsp:PolicyReference URI="#BasicHttpBinding_IEmployeeService_policy"/><soap:binding transport="http://schemas.xmlsoap.org/soap/http"/><wsdl:operation name="GetEmployees"><soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/GetEmployees" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="InsertEmployees"><soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/InsertEmployees" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation><wsdl:operation name="UpdateEmployees"><soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/EmployeeService/UpdateEmployees" style="document"/><wsdl:input><soap:body use="literal"/></wsdl:input><wsdl:output><soap:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="EmployeeService"><wsdl:port name="BasicHttpBinding_IEmployeeService" binding="tns:BasicHttpBinding_IEmployeeService"><soap:address location="https://compete-dataservice.jfisoftware.com:8232/v2_0/EmployeeService.svc"/></wsdl:port></wsdl:service></wsdl:definitions>

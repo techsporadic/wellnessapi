@@ -1,0 +1,250 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #818078;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+.input-group-text {
+    background-color: #233d56;
+    border: 0px;
+    color: #CCC;
+    border-radius: .25rem;
+}
+
+
+@media (max-width: 767px) {
+  /* Pull out the header and footer */
+  .loginDiv{ margin:50px;}
+  }
+
+.form-control {
+    background: #cfdeed;
+    color: #FFFFFF;
+    border: 0px;
+}
+
+#tagbox {border: 8px #b9bbbf solid; padding: 15px 5px 0px 5px; background-color: #fff;}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+    height: 100%;
+    /* background-color: #2f5072; */
+}
+
+.loginDiv {
+    /* background: #2f5072; */
+    color: #CCC;
+    padding: 35px;
+}
+p {
+  text-align: center;
+}
+
+.flogin {background: #fff;
+          border-radius: 20px;
+          border: 3px #ccc solid;
+          padding:20px; color:#000;}
+
+          .fregister {background: url('img/flogin.png');
+          border: 3px #ccc solid;
+          padding:20px; color:#000;}
+
+          .fregister2 {color:#7a2b16;}
+
+  .form-signin {
+  max-width: 330px;
+  padding: 0px 15px 15px 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+
+.validation-summary-errors{ background: #d06869; padding: 0px; max-width: 170px; border-radius: 7px; color: white; position: absolute; height: 27px; left: 0; right: 0; margin-left: auto; margin-right: auto; top:0px; margin-bottom: 8px;}
+.validation-summary-errors ul {list-style: none;}
+
+.emText {}
+.emText .f1 {font-weight: bolder; color:#ba5534;}
+.emText .f2 {font-style: italic;}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container, .cover-container2 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fuploadStyle {border:2px #4aad69 solid;}
+
+
+
+/* Padding for spacing */
+.inner {
+  padding: 2rem;
+}
+
+.inner2 {
+  padding: 4rem;
+}
+
+
+/*
+ * Header
+ */
+
+.masthead, .masthead2 {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: bold;
+  color: #7a2b16;
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255,255,255,.25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #7a2b16;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot, .mastfoot2 {
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 40em) {
+  /* Pull out the header and footer */
+  .masthead, .masthead2 {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot, .mastfoot2 {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container, .cover-container2 {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 62em) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 42rem;
+  }
+
+  .masthead2,
+  .mastfoot2,
+  .cover-container2 {
+    width: 65rem;
+  }
+}
+

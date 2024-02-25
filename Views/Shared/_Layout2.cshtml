@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="copyright" content="FacilityManager is a registered trademark of QuantumBall">
+    <meta name="description" content="No. 1 Facility Manager in Nigeria. Manage your properties, rents, charges, clients. ">
+    <meta name="keywords" content="properties, rents, charges, clients">
+    <meta name="robots" content="index,follow">
+    <link rel="icon" href="favicon.ico">
+    <base href="@System.Configuration.ConfigurationManager.AppSettings["webLink"]">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/Content/style/easy-autocomplete.min.css">
+    <link rel="stylesheet" href="/Content/style/easy-autocomplete.themes.min.css">
+    @Styles.Render("~/Content/ccss")
+    <link href="@Url.Content("https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css")" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="/Content/jquery-ui.css">
+    <link href="@Url.Content("~/Content/style/select2.min.css")" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">*@
+    <link href="@Url.Content("~/Content/fontawesome/css/all.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/style/custom-style.css")" rel="stylesheet" />
+</head>
+<body>
+
+    <main role="main">
+        <div class="row no-gutters">
+            <div id="hBar" class="col-md-2">
+                <div class="sdBar">
+                    <div class="merchantTitle">
+                        <p class="font-weight-bold text-truncate" id="tidTitle">User<br /></p>
+                        <p class="font-weight-light" id="midTitle"></p>
+                    </div>
+
+                    <div class="menContent">
+                        <p><i class="fas fa-tachometer-alt"></i> &nbsp;<a href="/Manager/Dashboard">Home</a></p>
+                        <p class="font-weight-light" id="midTitle">Items</p>
+                        <p id="midItem"><i class="far fa-file-alt"></i> &nbsp; <a href="/Manager/Zones/Manage">Zones</a></p>
+                        <p id="midItem"><i class="fas fa-file-signature"></i> &nbsp;<a href="/Manager/Blocks/Manage">Blocks</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Units/Manage">Units</a></p>
+
+                        <p class="font-weight-light" id="midTitle">Operation</p>
+                        <p id="midItem"><i class="far fa-file-alt"></i> &nbsp; <a href="/Manager/Allocations/Current">Allocations</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Clients/Manage">Clients</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Operations/Fees">Fees</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Operations/Reminders">Reminders</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Operations/Issues">Issues</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Operations/Expenses">Expenses</a></p>
+
+                        <p class="font-weight-light" id="midTitle">Revenue</p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Payments/Receivals">Payments</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Payments/Invoices">Invoices</a></p>
+
+                        <p class="font-weight-light" id="midTitle">Metrics</p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Account">Account</a></p>
+                        <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Metrics/Financials">Financials</a></p>
+
+                        @*<p class="font-weight-light" id="midTitle">Wallet</p>
+                            <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Wallet/TopUps">Top Ups</a></p>
+                            <p id="midItem"><i class="fas fa-file-invoice"></i> &nbsp; <a href="/Manager/Wallet/Debits">Debits</a></p>*@
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-12 col-lg-12 col-xl-10 rContent">
+                @Html.Partial("_ManagerPartial")
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+    @Scripts.Render("/Scripts/jquery-3.2.1.min.js")
+    @Scripts.Render("/Scripts/jquery-ui.js")
+    @Scripts.Render("~/bundles/cbootstrap")
+
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script>
+
+        function getCookieValue(a) {
+            var b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
+            return b ? b.pop() : '';
+        }
+
+        $(function () {
+
+            $("#midTitle").html("ID : " + getCookieValue("orgid"));
+
+            $("#closeAlarrt").click(function () { $(".alarrt3").fadeOut('slow').hide(); });
+            $("#closeSuccex").click(function () { $(".succex2").fadeOut('slow').hide(); });
+
+            var dRow = "";
+            var aRow = "";
+
+            $('#toggleMenuBtn').click(function () {
+                if ($("#toggleMenuBtn").hasClass('msBtn')) {
+                    $("#toggleMenuBtn").removeClass('msBtn');
+                }
+                else {
+                    $("#toggleMenuBtn").addClass('msBtn');
+                }
+
+                $("#hBar").toggle("slide");
+            });
+
+            var windowsize = $(window).width();
+
+            $(window).resize(function () {
+                windowsize = $(window).width();
+                if (windowsize > 1199) {
+                    $("#hBar").show();
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>

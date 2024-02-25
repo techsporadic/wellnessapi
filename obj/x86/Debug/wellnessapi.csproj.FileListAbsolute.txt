@@ -1,0 +1,2 @@
+C:\Users\mosflix\source\repos\wellness-api\obj\x86\Debug\wellnessapi.csproj.AssemblyReference.cache
+C:\Users\mosflix\source\repos\wellness-api\obj\x86\Debug\wellnessapi.csproj.CoreCompileInputs.cache

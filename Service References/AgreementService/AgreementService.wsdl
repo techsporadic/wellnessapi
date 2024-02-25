@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AgreementService" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IAgreementService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="true" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Requests" />
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Responses" />
+      <xs:element name="GetAgreements">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://JonasFitness.com/CompeteDataService/v2_0/Requests" minOccurs="0" name="GetAgreementsRequest" nillable="true" type="q1:GetAgreementsRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAgreementsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://JonasFitness.com/CompeteDataService/v2_0/Responses" minOccurs="0" name="GetAgreementsResult" nillable="true" type="q2:GetAgreementsResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoidAgreements">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Requests" minOccurs="0" name="VoidAgreementsRequest" nillable="true" type="q3:VoidAgreementsRequest" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoidAgreementsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Responses" minOccurs="0" name="VoidAgreementsResult" nillable="true" type="q4:VoidAgreementsResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Requests" elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" />
+      <xs:complexType name="GetAgreementsRequest">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the GetAgreements operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" base="q1:Deserializer">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="LastUpdated" nillable="true" type="q2:SimpleDateTimeRange">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify a date rage to get updated agreements
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="AgreementEffectiveDate" nillable="true" type="q3:SimpleDateTimeRange">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify the effective date range for agreements
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="ClubGroups" nillable="true" type="q4:ArrayOfClubGroup">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify which club groups to return agreements data for
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q5="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="Clubs" nillable="true" type="q5:ArrayOfClub">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify which clubs to return agreements data for
+             &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Optionally specify true for active agreements or false for inactive agreements
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PagingRequestInfo">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Controls the amount of information that can be requested at once; Leaving this out will return all information up to the default(maximum) page size
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetAgreementsRequest" nillable="true" type="tns:GetAgreementsRequest" />
+      <xs:complexType name="PagingRequestInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Page" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            An integer representing the page being requested (default is 1)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PageSize" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            An integer representing the number of records requested for each page (default varies depending on operation)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PagingRequestInfo" nillable="true" type="tns:PagingRequestInfo" />
+      <xs:complexType name="VoidAgreementsRequest">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data necessary to execute a call to the VoidAgreements operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element xmlns:q6="http://JonasFitness.com/CompeteDataService/v2_0/Common" name="Voids" nillable="true" type="q6:ArrayOfAgreementVoid">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Agreements that will be voided
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="VoidAgreementsRequest" nillable="true" type="tns:VoidAgreementsRequest" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Deserializer">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="Deserializer" nillable="true" type="tns:Deserializer" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Common" elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="SimpleDateTimeRange">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a range of DateTime
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Start" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The DateTime that begins the range
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="End" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The DateTime that ends the range
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SimpleDateTimeRange" nillable="true" type="tns:SimpleDateTimeRange" />
+      <xs:complexType name="ArrayOfClubGroup">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of ClubGroup objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ClubGroup" nillable="true" type="tns:ClubGroup" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClubGroup" nillable="true" type="tns:ArrayOfClubGroup" />
+      <xs:complexType name="ClubGroup">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal ClubGroup information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the ClubGroup
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ClubGroup" nillable="true" type="tns:ClubGroup" />
+      <xs:complexType name="ArrayOfClub">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple list of clubs with only their ID's
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Club" nillable="true" type="tns:Club" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfClub" nillable="true" type="tns:ArrayOfClub" />
+      <xs:complexType name="Club">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Club information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Club
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Club" nillable="true" type="tns:Club" />
+      <xs:complexType name="Employee">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Simple interpretation of minimal Employee information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Employee
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Employee" nillable="true" type="tns:Employee" />
+      <xs:complexType name="Customer">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a Customer's basic information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Represents the internal unique identifier of the Customer
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Customer" nillable="true" type="tns:Customer" />
+      <xs:complexType name="ArrayOfAgreementVoid">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of AgreementVoid objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AgreementVoid" nillable="true" type="tns:AgreementVoid" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAgreementVoid" nillable="true" type="tns:ArrayOfAgreementVoid" />
+      <xs:complexType name="AgreementVoid">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents a request to void an agreement.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AgreementNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The AgreementNumber indicating the specific agreement to void
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CancellationDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Date to set as the last active day of the agreement, any time is ignored, if not provided defaults to today's date
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CancellationReason" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The Reason for cancelling the agreement, if not provided defaults to club data service configured default value
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NextDuesPostDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Optionally changes the Next Dues Post Date to the date provided, any time is ignored
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AgreementVoid" nillable="true" type="tns:AgreementVoid" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://JonasFitness.com/CompeteDataService/v2_0/Responses" elementFormDefault="qualified" targetNamespace="http://JonasFitness.com/CompeteDataService/v2_0/Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" />
+      <xs:import namespace="http://JonasFitness.com/CompeteDataService/v2_0/Common" />
+      <xs:complexType name="GetAgreementsResponse">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains the data sent back in response to a call to the GetAgreements operation
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PagedResponseInfo">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Contains information regarding the current page of data being returned from a paged request
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="0" name="AgreementCollection" nillable="true" type="tns:ArrayOfAgreement">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Collection of agreements that will be returned
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetAgreementsResponse" nillable="true" type="tns:GetAgreementsResponse" />
+      <xs:complexType name="ResponseRoot">
+        <xs:sequence>
+          <xs:element name="StatusInfo" nillable="true" type="xs:anyType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Returns the status of the request execution
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ResponseRoot" nillable="true" type="tns:ResponseRoot" />
+      <xs:complexType name="StatusInfo">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" name="Status" type="q1:StatusCode">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            A StatusCode value giving a high level representation of the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Summary message providing further information regarding the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StatusInfo" nillable="true" type="tns:StatusInfo" />
+      <xs:complexType name="ErrorStatusInfo">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" name="Status" type="q2:StatusCode">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            A StatusCode value giving a high level representation of the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Summary message providing further information regarding the request outcome
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ErrorNumber" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Can be used to indicate more precise failure reason when only a generic message may be returned
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RequestEcho" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            For certain failures, returns a copy of the passed in request for comparison purposes
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorStatusInfo" nillable="true" type="tns:ErrorStatusInfo" />
+      <xs:complexType name="PagedResponseInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains information regarding the current page of data being returned from a paged request
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Page" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The specific page being returned from the overall result set
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PageSize" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The number of records actually used to determine a page; This may be different from the requested page size if the requested page size was less than 1 or greater that maximum for the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TotalPages" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The total number of pages, based on PageSize
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TotalRecords" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The total number of records resulting from the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PagedResponseInfo" nillable="true" type="tns:PagedResponseInfo" />
+      <xs:complexType name="ArrayOfAgreement">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Collection of agreements returned for a successful result
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Agreement" nillable="true" type="tns:Agreement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAgreement" nillable="true" type="tns:ArrayOfAgreement" />
+      <xs:complexType name="Agreement">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Contains detailed agreement information
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgreementNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The unique ID that identifies this agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AgreementCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The group of agreements that this agreement is related to
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AgreementType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The type of this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ApprovalDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The date this agreement was approved
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q3="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="ApprovalEmployee" nillable="true" type="q3:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Employee who approved this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ApprovalStatus" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Approval status of this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BillingCycle" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The billing cycle when recurring dues and charges on the employees account are billed
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CancellationReason" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The reason that the agreement was cancelled if it was cancelled.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q4="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="Club" nillable="true" type="q4:Club">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Club this agreement Was Sold At
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ContractDuration" nillable="true" type="xs:short">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The number of “periods” (either weeks or months) in the agreement. If the agreement is open-ended, a 0 can appear for this agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ContractDurationPeriod" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Defines the length of the contract
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Date this agreement was created
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CreationTime" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+              Time this agreement was created
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesFirstDue" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             The date on which the first payment for dues is billed.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesResponsibilityApplyLimit" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a the responsible party is responsible for only a portion of the agreement dues
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesResponsibilityLimit" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             The portion of the dues amount that the responsible party is responsible for
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q5="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="DuesResponsibilityMember" nillable="true" type="q5:Customer">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             The ID of the customer responsible for paying the dues for this agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesResponsibilityPercent" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Percent of the dues member is responsible for for this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesResponsibilityRelationship" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The relationship of the responsible member to the member on the agreement. F = family O = organization
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EContract" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            flag that indicates if this is an e-contract
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Effective date for this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q6="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="Employee" nillable="true" type="q6:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            ID of the employee who entered the agreement, The employee who enters the agreement may not be the employee who sold the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The date that the agreement expires
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FormofPayment" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Form of payment for this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FreeExtension" nillable="true" type="xs:unsignedByte">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The number of times that the member can extend their membership for free
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FreeExtensionPeriod" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The time duration for the free extension.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InvoiceCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The GL category in which the monies earned from this agreement are entered
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsCommissioned" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if the employee gets a commission from the sale from this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsOnline" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if the member can enroll online for this plan
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPIF" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if this agreement was marked to be paid-in-full when sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPrimaryAgreement" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if the plan used for the agreement is a primary agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsSignatureCollected" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicates if this agreement has a signature collected
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LastBillingDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The date that the monthly recurring dues were last billed
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LastUpdateDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Last time this agreement was updated
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q7="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="LastUpdateEmployee" nillable="true" type="q7:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Employee who last updated this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NextBillingDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Date this agreement will be billed next
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OtherCommissionUnit" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Unit that will be used to pay a commission to the third salesperson on the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OtherSalesUnit" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The unit that will be used to pay a commission to the third salesperson on the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PaymentFirstDue" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Date that the first payment is due for the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PlanDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            The unique name for the plan.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Plan type sold for this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PrimaryCommissionUnit" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Unit that will be used to pay a commission on the primary member on the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PrimarySalesUnit" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Unit that will be used to pay a commission on the primary member on the agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SaleDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Date this agreement was sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SecondaryCommissionUnit" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Unit that will be used to pay a commission on the secondary member on the agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SecondarySalesUnit" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Unit that will be used to pay a commission on the secondary member on the agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VoidDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Voided date for this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q8="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="VoidedByEmployee" nillable="true" type="q8:Employee">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Employee who voided this agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AddOnType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             How the product is linked to the plan
+                 Basic – the item is a required plan feature and cannot be removed.
+                 Default – the item can be removed during the sale of an agreement.
+                 Optional – the items can be included during the sale of an agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ApplyMethod" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if the charge is applied one time for all members associated with the plan (Total), or if each member is charged for the service/fee (Per Member)
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DiscountAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Any discounts applied to the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DownPaymentAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount of down payment for each item that requires a down payment based on the plan
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Dues set up for the services sold in the plan
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesDiscount" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount that the dues may be discounted when the agreement is sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AgreementDuesDuesFirstDue" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             The first date on which the dues should be paid
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FreezeDuesAmount" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount to be paid for each service in the agreement for the recurring dues if the agreement is frozen
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsDownPaymentCommission" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a commission is paid on the down payment
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsFreezeChargeCommission" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a commission is paid on the freeze amount
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsLockerCommission" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a commission is paid on the locker service
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsProrationAmountCommission" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a commission is paid on the proration amount
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsRecurrChargeCommission" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a commission is paid on the recurring dues
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsRenewalCommission" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if a commission is paid for a renewal
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPtVisitExpires" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if the PT visits expire
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPtVisitRecurring" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Indicates if the PT visits are recurring
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ItemBarcodeID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Barcode for each item (fee, training, services, or locker) sold on the plan
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Description of each item (fee, training, services, or locker) sold on the plan
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ItemType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Type of item (fee, service, training) sold on the plan.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q9="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="Member" nillable="true" type="q9:Customer">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+              Unique ID of the member on the agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesPaymentFirstDue" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Date that the first payment is due
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PIFAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount required for down payment for each service/fee on the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProrationAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount that is prorated for any item on the plan that is marked to be prorated.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProrationItemBarcodeID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Unique identifier of the item marked to be prorated
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProrationItemDescription" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Description of the item marked to be prorated
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProrationTaxAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Any taxes applied to the prorated items
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProrationVisitCount" type="xs:short">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Number of prorated visits for the associated agreement.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RecurringAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount for an item that is charged each time billing is run.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RenewalAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount for an item that is charged when the agreement is renewed.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DuesSaleDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             The date the agreement was sold
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TaxAmount" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount of tax charged for the item in the plan.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TermCost" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Amount to be paid for each item on the plan.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VisitQty" nillable="true" type="xs:short">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Number of visits associated with a training service in the plan.
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VisitsExpiresDays" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Number of days that the member has to use the visits in before they expire
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AgreementMemberAgreementNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             Number of the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsPrimary" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            Indicator that shows how each member is designated on the agreement
+                 Primary – the member is the primary member for the agreement.
+                 Secondary – the member is the secondary member on the agreement.
+                 Other – the member is on the agreement, but not as the primary or secondary
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q10="http://JonasFitness.com/CompeteDataService/v2_0/Common" minOccurs="0" name="AgrementMember" nillable="true" type="q10:Customer">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+             ID of each member on the agreement
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>&lt;summary&gt;
+            This field indicates whether the agreement is currently active;
+            True indicates that the agreement is currently active while false indicates that it is no longer active
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Agreement" nillable="true" type="tns:Agreement" />
+      <xs:complexType name="VoidAgreementsResponse">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Returns the status of the void agreement operations
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element name="Results" nillable="true" type="tns:ArrayOfVoidAgreementResult">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            Holds the results of attempting to update each ClubGroup
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="VoidAgreementsResponse" nillable="true" type="tns:VoidAgreementsResponse" />
+      <xs:complexType name="ArrayOfVoidAgreementResult">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Wraps up a collection of VoidAgreementResult objects
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="VoidAgreementResult" nillable="true" type="tns:VoidAgreementResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfVoidAgreementResult" nillable="true" type="tns:ArrayOfVoidAgreementResult" />
+      <xs:complexType name="VoidAgreementResult">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            Represents the result of executing the VoidAgreements; AgreementNumber can be used to link back to the original request
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ResponseRoot">
+            <xs:sequence>
+              <xs:element name="AgreementNumber" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:appinfo />
+                  <xs:documentation>&lt;summary&gt;
+            The AgreementNumber of the agreement that was voided
+            &lt;/summary&gt;</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="VoidAgreementResult" nillable="true" type="tns:VoidAgreementResult" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JonasFitness.ClubSolutions.CompeteDataService.ServiceConnector.DataContracts.Version2_0.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="StatusCode">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>&lt;summary&gt;
+            StatusCode represents the state of the response
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Success">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            Successful execution of request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Warning">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            Partially successful request execution
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SystemError">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            The system failed to execute the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RequestError">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            The system refused to execute the request due to a problem with the request
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AuthenticationError">
+            <xs:annotation>
+              <xs:documentation>&lt;summary&gt;
+            The request failed authentication
+            &lt;/summary&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="StatusCode" nillable="true" type="tns:StatusCode" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgreementService_GetAgreements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgreements" />
+  </wsdl:message>
+  <wsdl:message name="IAgreementService_GetAgreements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgreementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgreementService_VoidAgreements_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidAgreements" />
+  </wsdl:message>
+  <wsdl:message name="IAgreementService_VoidAgreements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidAgreementsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAgreementService">
+    <wsdl:documentation>&lt;summary&gt;
+            Provides a cohesive interface for retrieving agreement data from Compete
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="GetAgreements">
+      <wsdl:documentation>&lt;summary&gt;
+            Issues a call to retrieve Agreements
+            &lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService/GetAgreements" message="tns:IAgreementService_GetAgreements_InputMessage" />
+      <wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService/IAgreementService/GetAgreementsResponse" message="tns:IAgreementService_GetAgreements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidAgreements">
+      <wsdl:documentation>&lt;summary&gt;
+            Issues a call to void Agreements
+            &lt;/summary&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService/VoidAgreements" message="tns:IAgreementService_VoidAgreements_InputMessage" />
+      <wsdl:output wsaw:Action="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService/IAgreementService/VoidAgreementsResponse" message="tns:IAgreementService_VoidAgreements_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAgreementService" type="tns:IAgreementService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IAgreementService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAgreements">
+      <soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService/GetAgreements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidAgreements">
+      <soap:operation soapAction="http://JonasFitness.com/CompeteDataService/v2_0/AgreementService/VoidAgreements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgreementService">
+    <wsdl:port name="BasicHttpBinding_IAgreementService" binding="tns:BasicHttpBinding_IAgreementService">
+      <soap:address location="https://compete-dataservice.jfisoftware.com:8232/v2_0/AgreementService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

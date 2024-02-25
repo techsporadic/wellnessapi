@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Wellness.Properties" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="CompanyId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
+    <Setting Name="Thumbprint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">B50A8F2BF7315812CF2A21690A7FF5FDA33A156C</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
